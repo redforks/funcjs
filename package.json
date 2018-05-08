@@ -1,5 +1,5 @@
 {
-  "name": "funjs",
+  "name": "@forks/funjs",
   "version": "1.0.0",
   "description": "A fun functional programming library for javascript.",
   "main": "lib/index.js",
