@@ -1,0 +1,34 @@
+{
+  "name": "funjs",
+  "version": "1.0.0",
+  "description": "A fun functional programming library for javascript.",
+  "main": "lib/index.js",
+  "repository": "https://github.com/redforks/funjs.git",
+  "author": "Red Forks <redforks@gmail.com> (http://forks.red)",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn build:clean && yarn build:lib",
+    "build:clean": "rimraf lib",
+    "build:lib": "babel -d lib src --ignore '**/*.test.*'",
+    "prepublish": "yarn build",
+    "test": "jest"
+  },
+  "dependencies": {
+    "lodash": "^4.17.10"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-jest": "22.4.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "jest": "22.4.3",
+    "jest-cli": "22.4.3",
+    "regenerator-runtime": "^0.11.1",
+    "rimraf": "^2.6.2"
+  },
+  "jest": {
+    "testRegex": "src/.*\\.test\\.js$"
+  }
+}
