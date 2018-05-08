@@ -22,4 +22,13 @@ describe("makeRegister", function() {
     f("bar");
     expect(() => f("foo")).toThrowError(/ with duplicate key: "foo"/);
   });
+
+  it("custom key function", function() {
+    let getKey = jest.fn((a, b) => a + b);
+    f = makeRegister(inner, undefined, getKey);
+
+    f(3, 4);
+    expect(() => f(2, 5)).toThrow();
+    expect(getKey).toBeCalledWith(3, 4);
+  });
 });
